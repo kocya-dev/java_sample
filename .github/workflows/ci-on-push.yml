@@ -38,5 +38,5 @@ jobs:
     - name: run lizard
       run: |
         lizard -l java --html -Tcyclomatic_complexity=20 -Tnloc=200 -Tparameter_count=7 -x *\test\* -o index.html
-        echo "./index.html" >> $GITHUB_STEP_SUMMARY
+        cat .\index.html >> $GITHUB_STEP_SUMMARY
       
