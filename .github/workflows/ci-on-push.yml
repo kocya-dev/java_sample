@@ -37,6 +37,6 @@ jobs:
         pip install jinja2
     - name: run lizard
       run: |
-        lizard -l java --html -Tcyclomatic_complexity=20 -Tnloc=200 -Tparameter_count=7 -x *\test\* -o index.html
-        cat .\index.html >> $GITHUB_STEP_SUMMARY
+        lizard -l java --html -Tcyclomatic_complexity=20 -Tnloc=200 -Tparameter_count=7 -x */test/* -o index.html
+        cat ./index.html >> $GITHUB_STEP_SUMMARY
       
