@@ -24,5 +24,13 @@ jobs:
         java-version: '19'
         distribution: 'temurin'
         cache: maven
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        architecture: 'x64'
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: install lizard
+      run: lizard -l java --html -Tcyclomatic_complexity=20 -Tnloc=200 -Tparameter_count=7 -o index.html
+      
